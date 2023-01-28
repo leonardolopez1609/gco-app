@@ -6,8 +6,8 @@ import { ListcitaspendComponent } from './listcitaspend/listcitaspend.component'
 
 const routes: Routes = [
 
-  {path:'',component:ListcitaspendComponent},
-  {path:'detail',component:DetailpacienteComponent}
+  {path:'citaspend',component:ListcitaspendComponent},
+  {path:'detail',component:DetailpacienteComponent},
 ];
 
 @NgModule({

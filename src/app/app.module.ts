@@ -11,6 +11,7 @@ import { SharedModule } from './shared/shared.module';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { FooterComponent } from '@layout/footer/footer.component';
 import { ContentComponent } from './layout/content/content.component';
+import { DefauthomeComponent } from './layout/defauthome/defauthome.component';
 
 
 
@@ -21,7 +22,8 @@ import { ContentComponent } from './layout/content/content.component';
     TopbarComponent,
     SidebarComponent,
     FooterComponent,
-    ContentComponent
+    ContentComponent,
+    DefauthomeComponent
   ],
   imports: [
     CoreModule,
