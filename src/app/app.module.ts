@@ -10,6 +10,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { FooterComponent } from '@layout/footer/footer.component';
+import { ContentComponent } from './layout/content/content.component';
 
 
 
@@ -19,7 +20,8 @@ import { FooterComponent } from '@layout/footer/footer.component';
     PacientesComponent,
     TopbarComponent,
     SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    ContentComponent
   ],
   imports: [
     CoreModule,

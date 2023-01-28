@@ -28,7 +28,7 @@
       "@shared/*":["app/shared/*"],
       "@components/*":["app/components/*"],
       "@env/*":["enviroment/*"],
-      "@mudules/*":["app/mudules/*"],
+      "@modules/*":["app/modules/*"],
       "@data/*":["app/data/*"],
       "@layout/*":["app/layout/*"]
     }
