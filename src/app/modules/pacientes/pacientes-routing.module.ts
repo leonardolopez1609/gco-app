@@ -8,7 +8,9 @@ import { ListcitashistComponent } from './listcitashist/listcitashist.component'
 import { Solicitud1Component } from './solicitud1/solicitud1.component';
 
 const routes: Routes = [
-
+  {path:'',
+  redirectTo: "/paciente/citasact",
+    pathMatch: 'full'},
   {path:'citaspend',component:ListcitaspendComponent},
   {path:'detail',component:DetailpacienteComponent},
   {path:'citasact',component:ListcitasactComponent},

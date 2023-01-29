@@ -6,16 +6,18 @@ import { DefaulthomeComponent } from '@layout/defaulthome/defaulthome.component'
 
 
 const routes: Routes = [
-
+  {path:'',redirectTo:'/home', pathMatch:'full'},
+  
   {path:'paciente',component:ContentComponent,
    children: [
      {
       path: '', loadChildren:() => import('@modules/pacientes/pacientes.module').then((m)=> m.PacientesModule)
      }
     
+    
    ]
   },
-  {path:'',component:DefaulthomeComponent}
+  {path:'home',component:DefaulthomeComponent}
 ];
 
 

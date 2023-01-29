@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import * as fromComponents from './components';
+import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
@@ -12,6 +14,7 @@ import * as fromComponents from './components';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule
   
   ],
 
@@ -20,6 +23,7 @@ import * as fromComponents from './components';
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    RouterModule,
     ...fromComponents.components
   ]
 })
