@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { DefauthomeComponent } from './defauthome.component';
+import { ListcitasactComponent } from './listcitasact.component';
 
-describe('DefauthomeComponent', () => {
-  let component: DefauthomeComponent;
-  let fixture: ComponentFixture<DefauthomeComponent>;
+describe('ListcitasactComponent', () => {
+  let component: ListcitasactComponent;
+  let fixture: ComponentFixture<ListcitasactComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DefauthomeComponent ]
+      declarations: [ ListcitasactComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(DefauthomeComponent);
+    fixture = TestBed.createComponent(ListcitasactComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
