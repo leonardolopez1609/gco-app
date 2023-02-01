@@ -38,6 +38,12 @@
           },
           "configurations": {
             "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
               "budgets": [
                 {
                   "type": "initial",
@@ -68,7 +74,8 @@
           "configurations": {
             "production": {
               "browserTarget": "gco-app:build:production"
-            },
+            }
+            ,
             "development": {
               "browserTarget": "gco-app:build:development"
             }
