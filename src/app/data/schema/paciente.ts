@@ -7,4 +7,5 @@ export class Paciente {
     telefono: string = "";
     correo: string = "";
     contrasenia: string = "";
+    
 }
