@@ -2,7 +2,7 @@ export class Paciente {
     id?: number;
     nombre: string = "";
     apellido: string = "";
-    tipoDocuento: string = "";
+    tipoDocumento: string = "";
     documento: string = "";
     telefono: string = "";
     correo: string = "";

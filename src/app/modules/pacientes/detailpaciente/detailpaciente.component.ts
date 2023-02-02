@@ -17,12 +17,12 @@ export class DetailpacienteComponent implements OnInit{
    
    cargarPaciente():void{
     this.getPacienteUseCases.getPacienteByID(21).subscribe((paciente)=> {this.paciente=paciente});
-    console.log(this.paciente);
+    
    }
-
+ 
   ngOnInit() {
   this.cargarPaciente();
-      
+  
     }
 
 }
