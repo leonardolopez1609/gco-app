@@ -9,7 +9,7 @@ import { Observable, delay } from 'rxjs';
   providedIn: 'root'
 })
 export class PacienteService extends PacienteGateway {
-  private url:string = environment.urlApi;
+  private url:string = environment.urlApi+"pacientes/";
   constructor(private http: HttpClient) {
     super();
   }
