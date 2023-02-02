@@ -15,12 +15,12 @@ export class DetailpacienteComponent implements OnInit{
   
   constructor(private getPacienteUseCases: GetPacienteUseCases){}
    
-   cargarPaciente(){
+   cargarPaciente():void{
     this.getPacienteUseCases.getPacienteByID(21).subscribe((data)=> {this.paciente=data});
    }
 
   ngOnInit() {
-  
+  this.cargarPaciente();
       
     }
 
