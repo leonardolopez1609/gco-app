@@ -33,7 +33,7 @@
                                     <div class="col-sm-6">
                                         <input  type="text"
                                             class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="Perez">
+                                            [(ngModel)]="paciente.apellido" [ngModelOptions]="{standalone: true}">
                                     </div>
 
                                 </div>
@@ -48,7 +48,7 @@
                                                     Documento</label>
                                             </div>
                                             <select  class="custom-select"
-                                                id="inputGroupSelect01">
+                                                id="inputGroupSelect01" >
 
                                                 <option value="CC">CC</option>
                                                 <option value="TI">TI</option>
@@ -58,16 +58,15 @@
                                     </div>
 
                                     <div class="col-sm-6">
-                                        <input  type="text"
-                                            class="form-control form-control-user" id="exampleLastName"
-                                            placeholder="123456789">
+                                        <input  type="text" class="form-control form-control-user" id="exampleLastName"
+                                            [(ngModel)]="paciente.documento" [ngModelOptions]="{standalone: true}">
                                     </div>
 
                                 </div>
                                 <div class="form-group">
                                     <input  type="email"
                                         class="form-control form-control-user" id="exampleInputEmail"
-                                        placeholder="mario@gmail.com">
+                                        [(ngModel)]="paciente.correo" [ngModelOptions]="{standalone: true}">
                                 </div>
 
                                 <div class="form-group row">
@@ -79,7 +78,7 @@
                                     <div class="col-sm-6 mb-3 mb-sm-0">
                                         <input  type="text"
                                             class="form-control form-control-user" id="exampleFirstName"
-                                            placeholder="1000000001">
+                                            [(ngModel)]="paciente.telefono" [ngModelOptions]="{standalone: true}">
                                     </div>
 
                                     

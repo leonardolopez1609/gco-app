@@ -4,19 +4,19 @@ import { PacienteGateway } from '@data/gateways/paciente-gateway';
 import { Paciente } from '@data/schema/paciente';
 import { environment } from 'environments/environment.prod';
 import { Observable, delay } from 'rxjs';
+import { ApiPacientes } from './apiDataPacientes';
 
 @Injectable({
   providedIn: 'root'
 })
-export class PacienteService extends PacienteGateway {
-  private url:string = environment.urlApi+"pacientes/";
+export class PacienteService extends PacienteGateway{
  
   constructor(private http: HttpClient) {
     super();
   }
 
   override getByID(id: number): Observable<Paciente> {
-   return this.http.get<Paciente>(this.url+id);
+   return this.http.get<Paciente>(ApiPacientes.urlApi+id);
   }
   override getAll(): Observable<Paciente[]> {
     throw new Error('Method not implemented.');
