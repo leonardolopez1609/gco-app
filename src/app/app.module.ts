@@ -11,6 +11,8 @@ import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { FooterComponent } from '@layout/footer/footer.component';
 import { ContentComponent } from './layout/content/content.component';
 import { DefaulthomeComponent } from './layout/defaulthome/defaulthome.component';
+import { PacienteGateway } from '@data/gateways/paciente-gateway';
+import { PacienteService } from '@data/services/api/paciente.service';
 
 
 
@@ -33,6 +35,10 @@ import { DefaulthomeComponent } from './layout/defaulthome/defaulthome.component
     {
       provide: LocationStrategy,
       useClass: PathLocationStrategy
+    },
+    {provide: PacienteGateway,
+      useClass: PacienteService
+
     }
   ],
   bootstrap: [AppComponent]

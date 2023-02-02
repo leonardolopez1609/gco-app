@@ -10,7 +10,9 @@ export class GetPacienteUseCases {
     constructor(private pacienteGateway: PacienteGateway){}
 
      getPacienteByID(id:number): Observable<Paciente>{
+      
        return this.pacienteGateway.getByID(id)
+       
      }
 
      getPacientes(): Observable<Array<Paciente>>{

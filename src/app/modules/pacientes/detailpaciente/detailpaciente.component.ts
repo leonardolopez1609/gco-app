@@ -16,7 +16,8 @@ export class DetailpacienteComponent implements OnInit{
   constructor(private getPacienteUseCases: GetPacienteUseCases){}
    
    cargarPaciente():void{
-    this.getPacienteUseCases.getPacienteByID(21).subscribe((data)=> {this.paciente=data});
+    this.getPacienteUseCases.getPacienteByID(21).subscribe((paciente)=> {this.paciente=paciente});
+    console.log(this.paciente);
    }
 
   ngOnInit() {
