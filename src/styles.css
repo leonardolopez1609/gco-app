@@ -13,3 +13,20 @@ body{
 .sidebar1{
   height: 100%;
 }
+
+
+.sidebar #sidebarToggle {
+    width: 2.5rem;
+    height: 2.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .sidebar-light #sidebarToggle {
+    background-color: #eaecf4;
+  }
+  
+  .sidebar-dark #sidebarToggle {
+    background-color: rgba(255, 255, 255, 0.2);
+  }

@@ -14,7 +14,7 @@ import { DefaulthomeComponent } from './layout/defaulthome/defaulthome.component
 import { PacienteGateway } from '@data/gateways/paciente-gateway';
 import { PacienteService } from '@data/services/api/paciente.service';
 
-
+ 
 
 @NgModule({
   declarations: [

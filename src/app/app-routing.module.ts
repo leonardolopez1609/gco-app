@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { Routes, Router, RouterModule } from '@angular/router';
 import { ContentComponent } from '@layout/content/content.component';
 import { DefaulthomeComponent } from '@layout/defaulthome/defaulthome.component';
+import { DefaultErrorComponent } from '@shared/components/default-error/default-error.component';
 
 
 const routes: Routes = [
@@ -17,7 +18,8 @@ const routes: Routes = [
     
    ]
   },
-  {path:'home',component:DefaulthomeComponent}
+  {path:'home',component:DefaulthomeComponent},
+  {path:'defaultError',component:DefaultErrorComponent}
 ];
 
 
