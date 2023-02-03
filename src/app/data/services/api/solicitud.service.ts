@@ -23,7 +23,7 @@ export class SolicitudService extends SolicitudGateway {
 
   //IMPORTANTE ACTUALIZAR EL TIPO PACIENTE QUE SE RECIBE  EN LOS PARAMETROS (Paciente.Idpaciente)
   override getAll(paciente: Paciente, type: string): Observable<Solicitud[]> {
-    return this.http.get(`${ApiSolicitud.urlApi}${type}/21`,{ headers:environment.httpHeaders}).pipe(
+    return this.http.get(`${ApiSolicitud.urlApi}${type}/${paciente.idpaciente}`,{ headers:environment.httpHeaders}).pipe(
       map((response:any)=>response as Solicitud[] ),
       catchError(e =>{
        this.router.navigate(['defaultError']);
