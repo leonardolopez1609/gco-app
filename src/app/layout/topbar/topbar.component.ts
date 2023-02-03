@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Paciente } from '@data/schema/paciente';
-import { GetPacienteUseCases } from '@data/usecases/get-paciente-use-cases';
+import { GetPacienteUseCases } from '@data/usecases/paciente/get-paciente-use-cases';
 
 
 @Component({
@@ -8,7 +8,7 @@ import { GetPacienteUseCases } from '@data/usecases/get-paciente-use-cases';
   templateUrl: './topbar.component.html',
   styleUrls: ['./topbar.component.css']
 })
-export class TopbarComponent {
+export class TopbarComponent implements OnInit {
   public paciente:Paciente= new Paciente();
   constructor(private getPacienteUseCases: GetPacienteUseCases){}
   

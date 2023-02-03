@@ -33,7 +33,7 @@
                                         Tipo
                                     </th>
                                     <th scope="col">
-                                        Estado
+                                        Consultorio
                                     </th>
                                     <th scope="col">
                                         Observaciones
@@ -49,30 +49,16 @@
                                 </tr>
                             </thead>
                             <tbody style="font-size: 14px;">
-                                <tr>
-                                    <th>15/02/2023</th>
-                                    <th>8:00 - 10:00</th>
-                                    <th>Consulta</th>
-                                    <th>Aceptada</th>
-                                    <th>Dolor intenso</th>
-                                    <th>0,00 COP</th>
+                                <tr *ngFor="let soli of citasAct">
+                                    <th>{{soli.fecha}}</th>
+                                    <th>{{soli.horario.hora}}</th>
+                                    <th>{{soli.tipoSolicitud.nombre}}</th>
+                                    <th>{{soli.consultorio.nombre}}</th>
+                                    <th>{{soli.observaciones}}</th>
+                                    <th>{{soli.multa.monto}} COP</th>
                                     <th><button class="btn btn-danger btn-sm">Cancelar</button></th>
 
                                 </tr>
-                                <tr>
-                                    <th>30/03/2023</th>
-                                    <th>10:00 - 12:00</th>
-                                    <th>Consulta</th>
-                                    <th>Aceptada</th>
-                                    <th>Dolor leve</th>
-                                    <th>15.000,00 COP</th>
-                                    <th><button class="btn btn-danger btn-sm">Cancelar</button></th>
-
-                                </tr>
-
-
-
-
 
                             </tbody>
                         </table>

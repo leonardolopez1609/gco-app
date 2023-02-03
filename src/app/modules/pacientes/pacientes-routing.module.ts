@@ -13,7 +13,7 @@ const routes: Routes = [
     pathMatch: 'full'},
   {path:'citaspend',component:ListcitaspendComponent},
   {path:'detail',component:DetailpacienteComponent},
-  {path:'citasact',component:ListcitasactComponent},
+  {path:'activas',component:ListcitasactComponent},
   {path:'citashist',component:ListcitashistComponent},
   {path:'solic1',component:Solicitud1Component}
 ];

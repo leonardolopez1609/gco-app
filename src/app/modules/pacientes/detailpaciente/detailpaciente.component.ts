@@ -3,8 +3,8 @@ import { Router } from '@angular/router';
 import { TitleLayout } from '@data/constants/TitleLayout';
 import { DATOSPACIENTE } from '@data/constants/titles.const';
 import { Paciente } from '@data/schema/paciente';
-import { GetPacienteUseCases } from '@data/usecases/get-paciente-use-cases';
-import { PutPacienteUseCases } from '@data/usecases/put-paciente-use-cases';
+import { GetPacienteUseCases } from '@data/usecases/paciente/get-paciente-use-cases';
+import { PutPacienteUseCases } from '@data/usecases/paciente/put-paciente-use-cases';
 import Swal from 'sweetalert2';
 
 @Component({
@@ -20,7 +20,7 @@ export class DetailpacienteComponent implements OnInit {
   constructor(private getPacienteUseCases: GetPacienteUseCases,
     private putPacienteUsecases: PutPacienteUseCases,
     private router: Router) { }
-
+ 
   cargarPaciente(): void {
     this.getPacienteUseCases.getPacienteByID(21).subscribe((paciente) => {
       this.paciente = paciente

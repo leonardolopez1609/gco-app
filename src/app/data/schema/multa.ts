@@ -1,4 +1,4 @@
 export class Multa {
-    id?: number;
+    id: number=0;
     monto?: string;
 }

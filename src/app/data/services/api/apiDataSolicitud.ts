@@ -1,7 +1,6 @@
-
 import { environment } from "environments/environment.prod";
 
-export const ApiPacientes= {
+export const ApiSolicitud= {
     isProduction: environment.production,
-    urlApi:environment.urlApi+"pacientes/"
+    urlApi:environment.urlApi+"solicitud/"
     }

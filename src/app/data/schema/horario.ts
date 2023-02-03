@@ -1,5 +1,5 @@
 export class Horario {
-    id?: number ;
+    id: number =0;
     hora: string = "";
     capacidad: number = 0;
     

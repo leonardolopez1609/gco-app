@@ -6,14 +6,14 @@ import { Paciente } from "./paciente";
 import { TipoSolicitud } from "./tipo-solicitud";
 
 export class Solicitud {
-    id?: number;
+    id: number=0;
     fecha: string = "";
     observaciones: string = "";
-    paciente?: Paciente;
-    consultorio?: Consultorio;
-    horario?: Horario ;
-    tipo?: TipoSolicitud;
-    estado?: EstadoSolicitud;
-    multa?: Multa;
+    paciente: Paciente= new Paciente;
+    consultorio: Consultorio= new Consultorio;
+    horario: Horario = new Horario;
+    tipoSolicitud: TipoSolicitud= new TipoSolicitud;
+    estadoSolicitud: EstadoSolicitud= new EstadoSolicitud;
+    multa: Multa = new Multa;
    
 }

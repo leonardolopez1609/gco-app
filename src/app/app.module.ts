@@ -13,6 +13,8 @@ import { ContentComponent } from './layout/content/content.component';
 import { DefaulthomeComponent } from './layout/defaulthome/defaulthome.component';
 import { PacienteGateway } from '@data/gateways/paciente-gateway';
 import { PacienteService } from '@data/services/api/paciente.service';
+import { SolicitudGateway } from '@data/gateways/solicitud-gateway';
+import { SolicitudService } from '@data/services/api/solicitud.service';
 
  
 
@@ -38,6 +40,10 @@ import { PacienteService } from '@data/services/api/paciente.service';
     },
     {provide: PacienteGateway,
       useClass: PacienteService
+
+    },
+    {provide: SolicitudGateway,
+      useClass: SolicitudService
 
     }
   ],
