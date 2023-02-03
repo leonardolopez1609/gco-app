@@ -14,13 +14,13 @@
 
 
                 <!-- Begin Page Content -->
-                <div class="container-fluid">
+                <div class="container-fluid" *ngIf="isData(); else errorAct; trackBy: TrackByID">
                     <div class="text-center">
                         <app-title-h1 type="{{citasact.type}}" text="{{citasact.text}}"></app-title-h1>      
                          <!-- <h1 class="h4  mb-4 text-primary">Citas Activas</h1>-->
                     </div>
                     <div class="container col-md-15">
-                        <table class="table table-bordered" style="font-family: Arial;">
+                        <table class="table table-bordered" style="font-family: Arial;" >
                             <thead class="thead" style="background-color:#3383FF;color:white;">
                                 <tr>
                                     <th scope="col">
@@ -62,10 +62,14 @@
 
                             </tbody>
                         </table>
-
+                        
+                        
                     </div>
 
                 </div>
+                <ng-template #errorAct>
+                    <app-default-error> </app-default-error>   
+                  </ng-template>
                 <!-- End of Main Content -->
 
 
