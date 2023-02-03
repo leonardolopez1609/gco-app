@@ -16,33 +16,40 @@ import { TopbarComponent } from '@layout/topbar/topbar.component';
 }) 
 export class ListcitasactComponent implements OnInit {
 //
-  public citasAct: Array<Solicitud> = [];
+ public citasAct: Solicitud[]=[];
   public citasact: TitleLayout = CITASACT;
   public paciente: Paciente=new Paciente();
   constructor(private getSolicitudUseCases: GetSolicitudCaseUses,
      private getPacienteUseCases: GetPacienteUseCases, private router: Router) 
      { 
-      console.log(this.paciente)
-    this.getSolicitudUseCases.getSolicitudes(this.paciente, TypesSolis.tAct).subscribe(
-      (solis) => {
-        this.citasAct = solis
-        console.log(this.citasAct);
-      });
+      
      }
 
-
+ 
   cargarPaciente(): void {
     this.getPacienteUseCases.getPacienteByID(21).subscribe((paciente) => {
       this.paciente = paciente
     });
   }
 
+  isData(): boolean {
+    if (this.citasAct.length!=0)
+      return true;
+    else
+      return false;
+  }
   cargarSolicitudes(): void {
-    
+    console.log(this.paciente)
+    this.getSolicitudUseCases.getSolicitudes(this.paciente, TypesSolis.tAct).subscribe(
+      (solis) => {
+        this.citasAct = solis
+        console.log(this.citasAct);
+      });
   }
 
   ngOnInit() {
 this.cargarPaciente();
+this.cargarSolicitudes();
   }
 
 }

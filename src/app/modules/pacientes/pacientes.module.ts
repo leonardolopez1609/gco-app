@@ -7,21 +7,22 @@ import { pacientesRoutingModule } from './pacientes-routing.module';
 import { ListcitasactComponent } from './listcitasact/listcitasact.component';
 import { ListcitashistComponent } from './listcitashist/listcitashist.component';
 import { Solicitud1Component } from './solicitud1/solicitud1.component';
+import { DefaultErrorComponent } from "../../shared/components/default-error/default-error.component";
 
 
 
 @NgModule({
-  declarations: [
-    ListpacientesComponent,
-    ListcitaspendComponent,
-    DetailpacienteComponent,
-    ListcitasactComponent,
-    ListcitashistComponent,
-    Solicitud1Component
-  ],
-  imports: [
-    SharedModule,
-    pacientesRoutingModule
-  ]
+    declarations: [
+        ListpacientesComponent,
+        ListcitaspendComponent,
+        DetailpacienteComponent,
+        ListcitasactComponent,
+        ListcitashistComponent,
+        Solicitud1Component
+    ],
+    imports: [
+        SharedModule,
+        pacientesRoutingModule
+    ]
 })
 export class PacientesModule { }
