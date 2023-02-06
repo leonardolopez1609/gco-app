@@ -9,7 +9,7 @@ import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';
 import { LocationStrategy, PathLocationStrategy } from '@angular/common';
 import { FooterComponent } from '@layout/footer/footer.component';
-import { ContentComponent } from './layout/content/content.component';
+import { ContentComponent } from './shared/components/content/content.component';
 import { DefaulthomeComponent } from './layout/defaulthome/defaulthome.component';
 import { PacienteGateway } from '@data/gateways/paciente-gateway';
 import { PacienteService } from '@data/services/api/paciente.service';
@@ -20,12 +20,7 @@ import { SolicitudService } from '@data/services/api/solicitud.service';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    TopbarComponent,
-    SidebarComponent,
-    FooterComponent,
-    ContentComponent,
-    DefaulthomeComponent
+    AppComponent
   ],
   imports: [
     CoreModule,

@@ -6,16 +6,21 @@ import { ListcitaspendComponent } from './listcitaspend/listcitaspend.component'
 import { ListcitasactComponent } from './listcitasact/listcitasact.component';
 import { ListcitashistComponent } from './listcitashist/listcitashist.component';
 import { Solicitud1Component } from './solicitud1/solicitud1.component';
+import { UiPacienteComponent } from './ui-paciente/ui-paciente.component';
+import { ContentComponent } from '@shared/components/content/content.component';
+import { TestComponent } from './ui-paciente/test/test.component';
+import { DefaulthomeComponent } from '@layout/defaulthome/defaulthome.component';
 
 const routes: Routes = [
   {path:'',
-  redirectTo: "/paciente/citasact",
+  redirectTo: "/paciente/index",
     pathMatch: 'full'},
-  {path:'citaspend',component:ListcitaspendComponent},
+  {path:'pendientes',component:ListcitaspendComponent},
   {path:'detail',component:DetailpacienteComponent},
   {path:'activas',component:ListcitasactComponent},
-  {path:'citashist',component:ListcitashistComponent},
-  {path:'solic1',component:Solicitud1Component}
+  {path:'historial',component:ListcitashistComponent},
+  {path:'solic1',component:Solicitud1Component},
+  {path:'index',component:DefaulthomeComponent}
 ];
 
 @NgModule({
