@@ -20,7 +20,7 @@ export class LoginComponent {
     };
   };
 
-  isValidForm(){
+   get isValidForm(){
     return (this.loginForm.email.isValid()&& this.loginForm.password.isValid());
 
   }
@@ -29,16 +29,23 @@ export class LoginComponent {
     this.loginForm={
       email :{
         val:'',
-        error: 'El correo es invalido',
+        error: ' El correo es invalido! ',
         isValid(){
           const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
            //const pattern = [a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?
-            return emailRegex.test(this.val);
+            const isvalidEmail = emailRegex.test(this.val);
+            if(this.val==''){
+            this.error='* EL email es requerido! *' 
+            }else{
+              this.error='* EL email es invalido! *' 
+            }
+           return emailRegex.test(this.val);
+
         }
       },
       password :{
         val:'',
-        error: 'Se requiere una contraseña',
+        error: ' Se requiere una contraseña! ',
         isValid(){
            return this.val.length>0
         }
