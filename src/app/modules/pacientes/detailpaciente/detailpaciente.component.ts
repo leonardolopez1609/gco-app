@@ -20,9 +20,9 @@ export class DetailpacienteComponent implements OnInit {
   constructor(private getPacienteUseCases: GetPacienteUseCases,
     private putPacienteUsecases: PutPacienteUseCases,
     private router: Router) { }
- 
+  
   cargarPaciente(): void {
-    this.getPacienteUseCases.getPacienteByID(21).subscribe((paciente) => {
+    this.getPacienteUseCases.getPacienteByID(this.paciente.idpaciente).subscribe((paciente) => {
       this.paciente = paciente
       console.log(this.paciente);
     });

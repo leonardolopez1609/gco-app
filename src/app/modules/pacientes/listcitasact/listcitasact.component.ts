@@ -31,7 +31,7 @@ export class ListcitasactComponent implements OnInit {
       this.paciente = paciente
     });
   }
-
+ 
   isData(): boolean {
     if (this.citasAct.length!=0)
       return true;

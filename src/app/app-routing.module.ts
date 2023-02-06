@@ -8,41 +8,46 @@ import { LoginComponent } from '@modules/auth/login/login.component';
 import { UiPacienteComponent } from '@modules/pacientes/ui-paciente/ui-paciente.component';
 import { AuthModule } from '@modules/auth/auth.module';
 
-
+//VERIFICAR PORQUÉ LOGIN REQUIERE COMPONENTE PADRE
 const routes: Routes = [
- 
-  {path:'paciente',component:UiPacienteComponent,
-   children: [
-     {
-      path: '', loadChildren:() => import('@modules/pacientes/pacientes.module').then((m)=> m.PacientesModule)
-     }
-    
-    
-   ]
-  },
-  {path:'home',component:DefaulthomeComponent},
-  {path:'defaultError',component:DefaultErrorComponent},
-  
-  {path:'login',component:LoginComponent,
-  children: [
-    {
-     path: '', loadChildren:() => import('@modules/auth/auth.module').then((m)=> m.AuthModule)
-    }
-   
-   
-  ]
- }
-];
 
+  {
+    path: 'paciente', component: UiPacienteComponent,
+    children: [
+      {
+        path: '', loadChildren: () => import('@modules/pacientes/pacientes.module').then((m) => m.PacientesModule)
+      }
+    ]
+  },
+
+  {
+    path: 'auth', component: LoginComponent,
+    children: [
+      {
+        path: '',loadChildren: () => import('@modules/auth/auth.module').then((m) => m.AuthModule)
+      } 
+    ]
+  },
+
+  {
+    path: '',redirectTo:'/auth',pathMatch:'full'
+  }
+  ,
+
+  {
+    path: '**',redirectTo:'/auth',pathMatch:'full'
+  }
+
+];
 
 
 @NgModule({
   declarations: [],
   imports: [
     CommonModule,
-    RouterModule.forRoot(routes,{useHash:true})
+    RouterModule.forRoot(routes, { useHash: true })
   ],
-  exports:[
+  exports: [
     RouterModule
   ]
 })

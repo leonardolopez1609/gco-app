@@ -18,11 +18,11 @@ export class PacienteService extends PacienteGateway{
     super();
   }
   
-
+  //RESOLVER A FUTURO LA REDIRECCIÓN AL NO ENCONTRAR EL USUARIO
   override getByID(id: number): Observable<Paciente> {
    return this.http.get<Paciente>(ApiPacientes.urlApi+id).pipe(
     catchError(e =>{
-      this.router.navigate(['/home']);
+     // this.router.navigate(['/paciente']);
       console.error(e.error.mensaje);
       Swal.fire("Error al buscar al paciente", e.error.mensaje,'error');
       return throwError(() => new Error(e));
@@ -45,7 +45,7 @@ export class PacienteService extends PacienteGateway{
        return throwError(() => new Error(e));
      })
     )
-   
+    
   }
  
 }
