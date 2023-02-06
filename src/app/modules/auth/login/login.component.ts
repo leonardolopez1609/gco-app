@@ -8,14 +8,10 @@ import { CONST_LOGIN_PAGE } from '@data/constants';
 })
 export class LoginComponent {
 public data=CONST_LOGIN_PAGE 
-public loginForm;
 
-   get isValidForm(){
-    return (this.loginForm.email.isValid()&& this.loginForm.password.isValid());
-  }
 
   constructor(){
-    this.loginForm=this.data.FORM;
+   
     }
   }
 
