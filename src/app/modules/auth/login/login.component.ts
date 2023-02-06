@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CONST_LOGIN_PAGE } from '@data/constants';
 
 @Component({
   selector: 'app-login',
@@ -6,54 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-
-  public loginForm: {
-    email: {
-      val: string;
-      error: string;
-      isValid: () => boolean;
-    },
-    password: {
-      val: string;
-      error: string;
-      isValid: () => boolean;
-    };
-  };
+public data=CONST_LOGIN_PAGE 
+public loginForm;
 
    get isValidForm(){
     return (this.loginForm.email.isValid()&& this.loginForm.password.isValid());
-
   }
 
   constructor(){
-    this.loginForm={
-      email :{
-        val:'',
-        error: ' El correo es invalido! ',
-        isValid(){
-          const emailRegex = /^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i;
-           //const pattern = [a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?
-            const isvalidEmail = emailRegex.test(this.val);
-            if(this.val==''){
-            this.error='* El email es requerido! *' 
-            }else{
-              this.error='* El email es invalido! *' 
-            }
-           return isvalidEmail;
- 
-        }
-      },
-      password :{
-        val:'',
-        error: ' Se requiere una contraseña! ',
-        isValid(){
-           return this.val.length>0
-        }
-      }
-  
+    this.loginForm=this.data.FORM;
     }
   }
 
 
   
-}
+
