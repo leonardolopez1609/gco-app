@@ -35,12 +35,12 @@ export class LoginComponent {
            //const pattern = [a-zA-Z0-9!#$%&'*_+-]([\.]?[a-zA-Z0-9!#$%&'*_+-])+@[a-zA-Z0-9]([^@&%$\/()=?¿!.,:;]|\d)+[a-zA-Z0-9][\.][a-zA-Z]{2,4}([\.][a-zA-Z]{2})?
             const isvalidEmail = emailRegex.test(this.val);
             if(this.val==''){
-            this.error='* EL email es requerido! *' 
+            this.error='* El email es requerido! *' 
             }else{
-              this.error='* EL email es invalido! *' 
+              this.error='* El email es invalido! *' 
             }
-           return emailRegex.test(this.val);
-
+           return isvalidEmail;
+ 
         }
       },
       password :{
