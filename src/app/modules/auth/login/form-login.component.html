@@ -17,7 +17,7 @@
     </div>
 
     <button href="index.html" class="btn btn-primary btn-user btn-block"
-        [disabled]="!isValidForm" routerLink="/paciente/index">Ingresar
+        [disabled]="!isValidForm" (click)="authenticated()">Ingresar
        
     </button>
 </form>

@@ -36,3 +36,8 @@ export const CONST_LOGIN_PAGE:{
     }
     }
 }
+
+export const FORMUSER={
+    email:'leonardo@gmail.com',
+    password:'123'
+}
