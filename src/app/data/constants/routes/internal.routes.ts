@@ -1,6 +1,6 @@
 export const ROUTES_PATHS ={
     AUTH:{
-        LOGIN: 'login'
+        LOGIN: 'auth'
     },
 
     IUPACIENTE:{
