@@ -1,4 +1,4 @@
-import { VALIDATION_ERRORS } from "@data/constants/errors/erros-validatios.const"
+import { VALIDATION_ERRORS } from "@data/constants/errors/errors-validatios.const"
 import { ENUM_VALIDATION_OPTIONS } from "@data/enum"
 import { Ifield } from "@data/interfaces"
 import { ValidationsService } from "@shared/services/validations/validations.service"
