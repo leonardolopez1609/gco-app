@@ -7,6 +7,7 @@ import { DefaultErrorComponent } from '@shared/components/default-error/default-
 import { LoginComponent } from '@modules/auth/login/login.component';
 import { UiPacienteComponent } from '@modules/pacientes/ui-paciente/ui-paciente.component';
 import { AuthModule } from '@modules/auth/auth.module';
+import { NoAuthGuard } from '@core/guards/no-auth.guard';
 
 //VERIFICAR PORQUÉ LOGIN REQUIERE COMPONENTE PADRE
 const routes: Routes = [
@@ -21,7 +22,7 @@ const routes: Routes = [
   },
 
   {
-    path: 'auth', component: LoginComponent,
+    path: 'auth', component: LoginComponent,canActivate:[NoAuthGuard],
     children: [
       {
         path: '',loadChildren: () => import('@modules/auth/auth.module').then((m) => m.AuthModule)
