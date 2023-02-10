@@ -7,5 +7,4 @@ export interface IApiUserAuthenticated {
     telefono: string;
     correo: string;
     contrasenia: string;
-    token: string;
 }

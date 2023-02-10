@@ -30,8 +30,8 @@ export class ValidationsService {
 
   private validatePassword(v: any): IResponseValidation {
   const r: IResponseValidation = { msg: '', isValid: true }; 
-  const emailRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,20}$/;
-  r.isValid = emailRegex.test(v);
+  //const emailRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&#.$($)$-$_])[A-Za-z\d$@$!%*?&#.$($)$-$_]{8,20}$/;
+ // r.isValid = emailRegex.test(v);
   r.msg = (v == '') ? VALIDATION_ERRORS.PASSWORD_REQUIRED_FIELD : VALIDATION_ERRORS.PASSWORD_INVALID;
   return r;
   }

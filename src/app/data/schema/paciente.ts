@@ -1,5 +1,5 @@
 export class Paciente {
-    idpaciente: number=21;
+    idpaciente: number=0;
     nombre: string = "";
     apellido: string = "";
     tipoDocumento: string = "";

@@ -10,6 +10,7 @@ import { GetPacienteUseCases } from '@data/usecases/paciente/get-paciente-use-ca
 export class SidebarComponent implements OnInit {
   public paciente:Paciente= new Paciente();
   public type:string = "activas";
+  
   constructor(){}
 
   

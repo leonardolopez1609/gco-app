@@ -4,7 +4,10 @@ import { Router } from '@angular/router';
 import { ERRORS_CONST } from '@data/constants';
 import { API_ROUTES, INTERNAL_ROUTES } from '@data/constants/routes';
 import { IApiUserAuthenticated } from '@data/interfaces';
-import { BehaviorSubject, Observable, catchError, map, of } from 'rxjs';
+import { Paciente } from '@data/schema/paciente';
+import { environment } from 'environments/environment';
+import { BehaviorSubject, Observable, catchError, map, of, throwError } from 'rxjs';
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -12,60 +15,47 @@ import { BehaviorSubject, Observable, catchError, map, of } from 'rxjs';
 export class AuthService {
 
 
-  public currentUser: BehaviorSubject<IApiUserAuthenticated>;
+  public currentUser: BehaviorSubject<Paciente>;
   public nameUserLS = 'nameUserGCO';
 
-  constructor(private http: HttpClient,private router: Router) 
-  {
-    this.currentUser= new BehaviorSubject(
+  constructor(private http: HttpClient, private router: Router) {
+    this.currentUser = new BehaviorSubject(
       JSON.parse(localStorage.getItem(this.nameUserLS)!)
     );
-   }
-
-   get getUser(): IApiUserAuthenticated{
-    return this.currentUser.value;
-   }
-
-  login(
-    data:{
-     email:string;
-     password:string;
-    }):Observable<{
-    error:boolean,
-    msg: string,
-    data: any
-    }>
-  {
- const response = {error:true, msg:ERRORS_CONST.LOGING.ERROR,data:null}
- return this.http.post<any>(API_ROUTES.AUTH.LOGIN,data)
- .pipe(
-  map(r=>{
-    response.msg=r.msg;
-    response.error=r.error;
-    response.data=r.data;
-    this.setUserToLocalStorage(r.data);
-    this.currentUser.next(r.data)
-    if(!response.error){
-     this.router.navigateByUrl(INTERNAL_ROUTES.IUPACIENTE_DEFINDEX);
-    }
-    return response
   }
-  ),
-  catchError(e =>{
- return of(response)
-  })
- )
-}
 
-logouth(){
-  localStorage.removeItem(this.nameUserLS);
-  this.currentUser.unsubscribe();
-  this.router.navigateByUrl(INTERNAL_ROUTES.AUTH_LOGIN);
-}
+  get getUser(): IApiUserAuthenticated {
+    return this.currentUser.value;
+  }
 
-private setUserToLocalStorage(user: IApiUserAuthenticated){
-  localStorage.setItem(this.nameUserLS, JSON.stringify(user));
-}
+  login(data: { correo: string;contrasenia: string;}):Observable<any> {
+   
+    return this.http.post<Paciente>(API_ROUTES.AUTH.LOGIN, data,{ headers: environment.httpHeaders })
+      .pipe(
+        map(r => {
+          this.setUserToLocalStorage(r);
+          this.currentUser.next(r)
+          console.log(r)
+        }
+        ),
+        catchError(e => {
+          Swal.fire("Datos incorrectos",e.error.mensaje,'error');
+          return throwError(() => new Error(e));
+        })
+      )
+  }
+
+
+  //----------CONFIGURAR EL CURRENT USER.NEXT-----------------
+  logouth() {
+    localStorage.removeItem(this.nameUserLS);
+   // this.currentUser.next(null);
+    this.router.navigateByUrl(INTERNAL_ROUTES.AUTH_LOGIN);
+  }
+
+  private setUserToLocalStorage(user: IApiUserAuthenticated) {
+    localStorage.setItem(this.nameUserLS, JSON.stringify(user));
+  }
 
 
 

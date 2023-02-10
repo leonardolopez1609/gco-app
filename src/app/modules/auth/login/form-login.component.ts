@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { CONST_LOGIN_PAGE, FORMUSER } from '@data/constants';
+import { INTERNAL_ROUTES } from '@data/constants/routes';
 import { AuthService } from '@data/services/api/auth.service';
 import { PutPacienteUseCases } from '@data/usecases/paciente/put-paciente-use-cases';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-form-login',
@@ -12,10 +15,10 @@ export class FormLoginComponent {
   public loginForm;
   public data2=FORMUSER
   constructor(useCasePaciente: PutPacienteUseCases,
-   private authService: AuthService ){
+   private authService: AuthService,private router: Router){
     this.loginForm=this.data.FORM;
-    this.data2.email=this.loginForm.email.val;
-    this.data2.password=this.loginForm.password.val;
+    this.data2.user.correo=this.loginForm.email.val;
+    this.data2.user.contrasenia=this.loginForm.password.val;
     }
 
 
@@ -26,17 +29,21 @@ export class FormLoginComponent {
     }
 
     authenticated(){
-    this.data2.email=this.loginForm.email.val;
-    this.data2.password=this.loginForm.password.val;
+    this.data2.user.correo=this.loginForm.email.val;
+    this.data2.user.contrasenia=this.loginForm.password.val;
       console.log(this.data2)
      if(!this.isValidForm){
       return;
      }
-     this.authService.login(this.data2).subscribe(r=>{
-      console.log(r);
+     this.authService.login(this.data2.user).subscribe(
+      json => {
+      this.router.navigateByUrl(INTERNAL_ROUTES.IUPACIENTE_DEFINDEX);
+    
      })
     }
+     
 
+    
   
     
     }
