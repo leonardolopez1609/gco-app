@@ -35,7 +35,7 @@
             <i class="fas fa-fw fa-list" ></i>
             <span>{{item.title}}</span>
         </a>
-        <div  id="{{item.id}}" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionSidebar">
+        <div id="{{item.id}}" class="collapse" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <h6 class="collapse-header">{{item.subtitle}}</h6> 
                 <a *ngFor="let item of item.links" class="collapse-item" routerLink="{{item.link}}">{{item.name}}</a>

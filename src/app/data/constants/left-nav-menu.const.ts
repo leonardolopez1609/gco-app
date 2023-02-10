@@ -35,7 +35,7 @@ export const LEFT_NAV_MENUS: IleftNavMenu =
         title: 'Preguntas Frecuentes',
         subtitle: 'Citas',
         icon: 'fas fa-fw fa-question',
-        id: 'collapse',
+        id: 'collapseUtilities',
         target: '#collapseUtilities',
         controls: 'collapseUtilities',
         label:'headingUtilities',
