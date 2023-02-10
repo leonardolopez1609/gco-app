@@ -2,7 +2,7 @@ export const ROUTES_PATHS ={
     AUTH:{
         LOGIN: 'auth'
     },
-
+ 
     IUPACIENTE:{
         DEFAULT:'paciente',
         INDEX: 'index'
