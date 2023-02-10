@@ -16,11 +16,15 @@ export class AuthService {
 
 
   public currentUser: BehaviorSubject<Paciente>;
+  public currentUserEmpty: BehaviorSubject<Paciente>;
   public nameUserLS = 'nameUserGCO';
 
   constructor(private http: HttpClient, private router: Router) {
     this.currentUser = new BehaviorSubject(
       JSON.parse(localStorage.getItem(this.nameUserLS)!)
+    );
+    this.currentUserEmpty = new BehaviorSubject(
+      JSON.parse(localStorage.getItem('')!)
     );
   }
 
@@ -48,9 +52,11 @@ export class AuthService {
 
   //----------CONFIGURAR EL CURRENT USER.NEXT-----------------
   logouth() {
+    
     localStorage.removeItem(this.nameUserLS);
-   // this.currentUser.next(null);
-     this.router.navigate(['auth']);
+    this.router.navigate(['gco/auth']);
+    this.currentUser.next(this.currentUserEmpty.value);
+     
     //this.router.navigateByUrl(INTERNAL_ROUTES.AUTH_LOGIN);
   }
 

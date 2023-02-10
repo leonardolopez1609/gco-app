@@ -2,5 +2,6 @@
 
 export const TypesSolis= {
     tAct: 'activas',
-    tPend: 'pendientes'
+    tPend: 'pendientes',
+    tHisto: 'historial'
     }
