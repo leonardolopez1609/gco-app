@@ -50,7 +50,8 @@ export class AuthService {
   logouth() {
     localStorage.removeItem(this.nameUserLS);
    // this.currentUser.next(null);
-    this.router.navigateByUrl(INTERNAL_ROUTES.AUTH_LOGIN);
+     this.router.navigate(['auth']);
+    //this.router.navigateByUrl(INTERNAL_ROUTES.AUTH_LOGIN);
   }
 
   private setUserToLocalStorage(user: IApiUserAuthenticated) {

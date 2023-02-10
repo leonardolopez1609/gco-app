@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Paciente } from '@data/schema/paciente';
 import { AuthService } from '@data/services/api/auth.service';
 import { GetPacienteUseCases } from '@data/usecases/paciente/get-paciente-use-cases';
@@ -11,7 +12,9 @@ import { GetPacienteUseCases } from '@data/usecases/paciente/get-paciente-use-ca
 })
 export class TopbarComponent implements OnInit {
   public paciente:Paciente= new Paciente();
-  constructor(private getPacienteUseCases: GetPacienteUseCases, private authService: AuthService){
+  constructor(private getPacienteUseCases: GetPacienteUseCases,
+     private authService: AuthService,
+     private router: Router){
     
   }
   
@@ -23,6 +26,7 @@ export class TopbarComponent implements OnInit {
 
    logouth(){
     this.authService.logouth();
+    
   }
  
   ngOnInit() {
