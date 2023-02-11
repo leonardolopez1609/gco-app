@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { HISTORIAL_NOT_FOUND } from '@data/constants/errors/solicitudes/historial-not-found.const';
 import { HISTORIAL_TABLE_DATA } from '@data/constants/pages/Tables/soli-hist.const';
@@ -13,7 +13,7 @@ import { GetSolicitudCaseUses } from '@data/usecases/solicitud/get-solicitud-cas
   templateUrl: './historial-table.component.html',
   styleUrls: ['./historial-table.component.css']
 })
-export class HistorialTableComponent {
+export class HistorialTableComponent implements OnInit, OnDestroy {
 
 
   public dataCitas!: ISoliTable;
@@ -27,6 +27,9 @@ export class HistorialTableComponent {
       this.dataCitas=HISTORIAL_TABLE_DATA;
       this.dataError=HISTORIAL_NOT_FOUND;
      }
+  ngOnDestroy(): void {
+    this.dataCitas.citas=[];
+  }
 
      isData(): boolean {
       if (this.dataCitas.citas.length!=0)

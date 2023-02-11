@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { PENDIENTES_NOT_FOUND } from '@data/constants/errors/solicitudes/pendientes-not-found.const';
 import { PENDIENTES_TABLE_DATA } from '@data/constants/pages/Tables/soli-pend.const';
@@ -13,7 +13,7 @@ import { GetSolicitudCaseUses } from '@data/usecases/solicitud/get-solicitud-cas
   templateUrl: './pendientes-table.component.html',
   styleUrls: ['./pendientes-table.component.css']
 })
-export class PendientesTableComponent {
+export class PendientesTableComponent implements OnInit, OnDestroy{
   public dataCitas!: ISoliTable;
   public paciente: Paciente=this.authService.getUser;
   public dataError!: IErrorCont;
@@ -25,6 +25,9 @@ export class PendientesTableComponent {
       this.dataCitas=PENDIENTES_TABLE_DATA;
       this.dataError=PENDIENTES_NOT_FOUND;
      }
+  ngOnDestroy(): void {
+    this.dataCitas.citas=[];
+  }
 
      isData(): boolean {
       if (this.dataCitas.citas.length!=0)

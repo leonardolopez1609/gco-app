@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ACTIVAS_NOT_FOUND } from '@data/constants/errors/solicitudes/activas-not-found.const';
 import { ACTIVAS_TABLE_DATA } from '@data/constants/pages/Tables/soli-act.const';
@@ -13,9 +13,9 @@ import { GetSolicitudCaseUses } from '@data/usecases/solicitud/get-solicitud-cas
   templateUrl: './activas-table.component.html',
   styleUrls: ['./activas-table.component.css']
 })
-export class ActivasTableComponent {
+export class ActivasTableComponent implements OnInit, OnDestroy {
 
-  public dataCitas!: ISoliTable;
+  public dataCitas: ISoliTable=ACTIVAS_TABLE_DATA;
   public paciente: Paciente;
  
   public dataError!: IErrorCont;
@@ -24,10 +24,14 @@ export class ActivasTableComponent {
   constructor(private getSolicitudUseCases: GetSolicitudCaseUses, 
     private router: Router,private authService: AuthService, private dataRoute: ActivatedRoute) 
      { 
-      this.dataCitas=ACTIVAS_TABLE_DATA;
+      //this.dataCitas=ACTIVAS_TABLE_DATA;
       this.dataError=ACTIVAS_NOT_FOUND;
       this.paciente=this.authService.getUser;
      }
+  ngOnDestroy(): void {
+    console.log('Se destruyó el componente');
+    this.dataCitas.citas=[];
+  }
 
      isData(): boolean {
       if (this.dataCitas.citas.length!=0)
@@ -38,6 +42,7 @@ export class ActivasTableComponent {
 
     
      cargarSolicitudes(): void {
+      
       console.log(this.paciente)
       this.getSolicitudUseCases.getSolicitudes(this.paciente, this.dataCitas.type).subscribe(
         (solis) => {
