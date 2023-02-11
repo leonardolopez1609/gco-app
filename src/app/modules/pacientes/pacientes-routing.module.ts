@@ -8,6 +8,7 @@ import { AuthGuard } from '@core/guards/auth.guard';
 import { SolicitudesTableComponent } from '@shared/components/solicitudes-table/solicitudes-table.component';
 import { PendientesTableComponent } from './pendientes-table/pendientes-table.component';
 import { HistorialTableComponent } from './historial-table/historial-table.component';
+import { ActivasTableComponent } from './activas-table/activas-table.component';
 const routes: Routes = [
   {path:'',
   redirectTo: "/paciente/index",
@@ -15,7 +16,7 @@ const routes: Routes = [
   
   {path:'detail',component:DetailpacienteComponent,canActivate:[AuthGuard]},
 
-  {path:'activas',component:SolicitudesTableComponent,canActivate:[AuthGuard]},
+  {path:'activas',component:ActivasTableComponent,canActivate:[AuthGuard]},
 
   {path:'pendientes',component:PendientesTableComponent,canActivate:[AuthGuard]},
 

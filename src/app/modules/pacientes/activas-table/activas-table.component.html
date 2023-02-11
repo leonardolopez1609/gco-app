@@ -27,7 +27,7 @@
                                         {{item.name}}
                                     </th>
                                 </tr>
-                            </thead>
+                            </thead> 
                             <tbody></tbody>
                              
                             <tbody style="font-size: 14px;">
@@ -54,8 +54,8 @@
                 <ng-template #errorAct>
 
                     <!-- IMPLEMENTAR UN INPUT PARA PERSONALIZAR EL ERROR -->
-                    
-                    <app-default-error> </app-default-error>   
+                    <app-not-found-error [data]="dataError"></app-not-found-error>
+                   <!-- <app-default-error> </app-default-error>  --> 
                   </ng-template>
                 <!-- End of Main Content -->
 
