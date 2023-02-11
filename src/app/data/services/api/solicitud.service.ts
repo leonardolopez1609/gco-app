@@ -26,9 +26,8 @@ export class SolicitudService extends SolicitudGateway {
     return this.http.get(`${ApiSolicitud.urlApi}${type}/${paciente.idpaciente}`,{ headers:environment.httpHeaders}).pipe(
       map((response:any)=>response as Solicitud[] ),
       catchError(e =>{
-       //this.router.navigate(['']);
        console.error(e.error.mensaje);
-       Swal.fire(`Error al mostrar las citas del tipo ${type}`, e.error.mensaje,'error');
+       Swal.fire(`No existen citas del tipo ${type}`, e.error.mensaje,'error');
        return throwError(() => new Error(e));
      })
     )

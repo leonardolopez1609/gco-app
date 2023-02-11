@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ACTIVAS_TABLE_DATA } from '@data/constants/pages/Tables/soli-act.const';
-import { PENDIENTES_TABLE_DATA } from '@data/constants/pages/Tables/soli-pend.const';
+import { HISTORIAL_TABLE_DATA } from '@data/constants/pages/Tables/soli-hist.const';
 import { ISoliTable } from '@data/interfaces/ui/itable-solicitudes.metadata';
 import { Paciente } from '@data/schema/paciente';
 import { AuthService } from '@data/services/api/auth.service';
@@ -22,7 +21,7 @@ export class HistorialTableComponent {
   constructor(private getSolicitudUseCases: GetSolicitudCaseUses, 
     private router: Router,private authService: AuthService, private dataRoute: ActivatedRoute) 
      { 
-      this.dataCitas=PENDIENTES_TABLE_DATA;
+      this.dataCitas=HISTORIAL_TABLE_DATA;
      }
 
      isData(): boolean {
