@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { IleftNavMenu } from '@data/interfaces/ui/ileft-nav-menu.metadata';
 import { Paciente } from '@data/schema/paciente';
 
@@ -9,7 +10,13 @@ import { Paciente } from '@data/schema/paciente';
 })
 export class LateralMenuComponent {
   public paciente:Paciente= new Paciente();
-  public type:string = "activas";
   @Input()menus!: IleftNavMenu;
+
+ constructor(private router:Router){
+
+ }
+   
  
+
+
 }

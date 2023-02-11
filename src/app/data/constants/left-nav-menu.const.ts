@@ -15,19 +15,19 @@ export const LEFT_NAV_MENUS: IleftNavMenu =
         links: [
             {
                 name: 'Solocitar Cita',
-                link: '/solic1'
+                link: 'solic1'
             },
             {
                 name: 'Citas Activas',
-                link: '/'
+                link: 'activas'
             },
             {
                 name: 'Citas Pendientes',
-                link: '/pendientes'
+                link: 'pendientes'
             },
             {
                 name: 'Historial',
-                link: '/historial'
+                link: 'historial'
             }
         ]
     }, {

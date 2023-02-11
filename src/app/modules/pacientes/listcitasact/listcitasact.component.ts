@@ -13,11 +13,11 @@ import { TopbarComponent } from '@layout/topbar/topbar.component';
 @Component({
   selector: 'app-listcitasact',
   templateUrl: './listcitasact.component.html',
-  styleUrls: ['./listcitasact.component.css']
+  styleUrls: ['./listcitasact.component.css'] 
 }) 
 export class ListcitasactComponent implements OnInit {
 //
- public citasAct: Solicitud[]=[];
+  public citasAct: Solicitud[]=[];
   public citasact: TitleLayout = CITASACT;
   public paciente: Paciente=this.authService.getUser;
   constructor(private getSolicitudUseCases: GetSolicitudCaseUses,
@@ -49,7 +49,6 @@ export class ListcitasactComponent implements OnInit {
   }
 
   ngOnInit() {
-this.cargarPaciente();
 this.cargarSolicitudes();
   }
 

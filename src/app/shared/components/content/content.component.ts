@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { ISoliTable } from '@data/interfaces/ui/itable-solicitudes.metadata';
 
 @Component({
   selector: 'app-content',
@@ -6,5 +7,6 @@ import { Component } from '@angular/core';
   styleUrls: ['./content.component.css']
 })
 export class ContentComponent {
-
+  @Input()dataCitas!: ISoliTable;
+  
 }

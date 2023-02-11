@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import * as fromComponents from './components';
 import { RouterModule } from '@angular/router';
 import { LateralMenuComponent } from './components/lateral-menu/lateral-menu.component';
+import { SolicitudesTableComponent } from './components/solicitudes-table/solicitudes-table.component';
 
 
 
