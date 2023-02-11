@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListcitaspendComponent } from './listcitaspend.component';
+import { ActivasTableComponent } from './activas-table.component';
 
-describe('ListcitaspendComponent', () => {
-  let component: ListcitaspendComponent;
-  let fixture: ComponentFixture<ListcitaspendComponent>;
+describe('ActivasTableComponent', () => {
+  let component: ActivasTableComponent;
+  let fixture: ComponentFixture<ActivasTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListcitaspendComponent ]
+      declarations: [ ActivasTableComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ListcitaspendComponent);
+    fixture = TestBed.createComponent(ActivasTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

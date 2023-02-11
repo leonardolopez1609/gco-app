@@ -16,51 +16,34 @@
                 <!-- Begin Page Content -->
                 <div class="container-fluid" *ngIf="isData(); else errorAct;">
                     <div class="text-center">
-                        <app-title-h1 type="{{citasact.type}}" text="{{citasact.text}}"></app-title-h1>      
+                        <app-title-h1 type="{{dataCitas.txtType}}" text="{{dataCitas.title}}"></app-title-h1>      
                          <!-- <h1 class="h4  mb-4 text-primary">Citas Activas</h1>-->
                     </div>
                     <div class="container col-md-15">
                         <table class="table table-bordered" style="font-family: Arial;" >
                             <thead class="thead" style="background-color:#3383FF;color:white;">
                                 <tr>
-                                    <th scope="col">
-                                        Fecha
+                                    <th scope="col" *ngFor="let item of dataCitas.heads">
+                                        {{item.name}}
                                     </th>
-                                    <th scope="col">
-                                        Horario
-                                    </th>
-                                    <th scope="col">
-                                        Tipo
-                                    </th>
-                                    <th scope="col">
-                                        Consultorio
-                                    </th>
-                                    <th scope="col">
-                                        Observaciones
-                                    </th>
-                                    <th scope="col">
-                                        Multa $
-                                    </th>
-
-                                    <th scope="col">
-                                        Acciones
-                                    </th>
-
                                 </tr>
                             </thead>
+                            <tbody></tbody>
+                             
                             <tbody style="font-size: 14px;">
-                                <tr *ngFor="let soli of citasAct">
+                                <tr *ngFor="let soli of dataCitas.citas">
                                     <th>{{soli.fecha}}</th>
                                     <th>{{soli.horario.hora}}</th>
                                     <th>{{soli.tipoSolicitud.nombre}}</th>
                                     <th>{{soli.consultorio.nombre}}</th>
                                     <th>{{soli.observaciones}}</th>
                                     <th>{{soli.multa.monto}} COP</th>
-                                    <th><button class="btn btn-danger btn-sm">Cancelar</button></th>
 
                                 </tr>
 
                             </tbody>
+
+
                         </table>
                         
                         
@@ -68,6 +51,9 @@
 
                 </div>
                 <ng-template #errorAct>
+
+                    <!-- IMPLEMENTAR UN INPUT PARA PERSONALIZAR EL ERROR -->
+                    
                     <app-default-error> </app-default-error>   
                   </ng-template>
                 <!-- End of Main Content -->

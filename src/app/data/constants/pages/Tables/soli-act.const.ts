@@ -1,6 +1,8 @@
 import { ISoliTable } from "@data/interfaces/ui/itable-solicitudes.metadata";
 
 export const ACTIVAS_TABLE_DATA: ISoliTable = {
+    title: 'Citas Activas',
+    txtType: 'primary',
     type:'activas',
     heads: [
         {

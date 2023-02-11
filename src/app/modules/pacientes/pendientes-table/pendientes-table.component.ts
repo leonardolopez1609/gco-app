@@ -1,18 +1,18 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ACTIVAS_TABLE_DATA } from '@data/constants/pages/Tables/soli-act.const';
+import { PENDIENTES_TABLE_DATA } from '@data/constants/pages/Tables/soli-pend.const';
 import { ISoliTable } from '@data/interfaces/ui/itable-solicitudes.metadata';
 import { Paciente } from '@data/schema/paciente';
 import { AuthService } from '@data/services/api/auth.service';
 import { GetSolicitudCaseUses } from '@data/usecases/solicitud/get-solicitud-case-uses';
 
 @Component({
-  selector: 'app-solicitudes-table',
-  templateUrl: './solicitudes-table.component.html',
-  styleUrls: ['./solicitudes-table.component.css']
+  selector: 'app-pendientes-table',
+  templateUrl: './pendientes-table.component.html',
+  styleUrls: ['./pendientes-table.component.css']
 })
-export class SolicitudesTableComponent implements OnInit{
- 
+export class PendientesTableComponent {
   public dataCitas!: ISoliTable;
   public paciente: Paciente=this.authService.getUser;
 
@@ -20,7 +20,7 @@ export class SolicitudesTableComponent implements OnInit{
   constructor(private getSolicitudUseCases: GetSolicitudCaseUses, 
     private router: Router,private authService: AuthService, private dataRoute: ActivatedRoute) 
      { 
-      this.dataCitas=ACTIVAS_TABLE_DATA;
+      this.dataCitas=PENDIENTES_TABLE_DATA;
      }
 
      isData(): boolean {

@@ -1,9 +1,9 @@
 import { ISoliTable } from "@data/interfaces/ui/itable-solicitudes.metadata";
 
-export const PENDIENTES_TABLE_DATA: ISoliTable = {
-    title: 'Citas Pendientes',
-    txtType: 'primary',
-    type:'pendientes',
+export const HISTORIAL_TABLE_DATA: ISoliTable = {
+    title: 'Historial Citas',
+    txtType: 'binary',
+    type:'historial',
     heads: [
         {
             name: 'Fecha'
@@ -21,8 +21,8 @@ export const PENDIENTES_TABLE_DATA: ISoliTable = {
             name: 'Observaciones'
         },
         {
-            name: 'Acciones'
-        },
+            name: 'Multa'
+        }
     ],
     citas:[]
 

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ListcitasactComponent } from './listcitasact.component';
+import { HistorialTableComponent } from './historial-table.component';
 
-describe('ListcitasactComponent', () => {
-  let component: ListcitasactComponent;
-  let fixture: ComponentFixture<ListcitasactComponent>;
+describe('HistorialTableComponent', () => {
+  let component: HistorialTableComponent;
+  let fixture: ComponentFixture<HistorialTableComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListcitasactComponent ]
+      declarations: [ HistorialTableComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(ListcitasactComponent);
+    fixture = TestBed.createComponent(HistorialTableComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
