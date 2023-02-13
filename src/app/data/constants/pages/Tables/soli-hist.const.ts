@@ -22,6 +22,9 @@ export const HISTORIAL_TABLE_DATA: ISoliTable = {
         },
         {
             name: 'Multa'
+        },
+        {
+            name: 'Estado'
         }
     ],
     citas:[]
