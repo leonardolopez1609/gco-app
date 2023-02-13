@@ -2,7 +2,7 @@ import { ISoliTable } from "@data/interfaces/ui/itable-solicitudes.metadata";
 
 export const HISTORIAL_TABLE_DATA: ISoliTable = {
     title: 'Historial Citas',
-    txtType: 'binary',
+    txtType: 'primary',
     type:'historial',
     heads: [
         {

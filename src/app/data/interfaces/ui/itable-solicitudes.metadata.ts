@@ -6,4 +6,5 @@ export interface ISoliTable{
       name:string;
     }[],
     citas:any[];
+
 }

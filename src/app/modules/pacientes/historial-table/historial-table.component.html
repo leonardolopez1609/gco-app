@@ -38,7 +38,8 @@
                                     <th>{{soli.consultorio.nombre}}</th>
                                     <th>{{soli.observaciones}}</th>
                                     <th>{{soli.multa.monto}} COP</th>
-                                    <th>{{soli.estadoSolicitud.nombre}}</th>
+                                    <th class="text-danger" *ngIf="soli.estadoSolicitud.nombre=='Rechazada'; else color2;">{{soli.estadoSolicitud.nombre}}</th>
+                                    
                                 </tr>
 
                             </tbody>
@@ -50,6 +51,9 @@
                     </div>
 
                 </div>
+                <ng-template #color2>
+                    <th class="text-success">Finalizada</th>
+                </ng-template>
                 <ng-template #errorAct>
 
                     <!-- IMPLEMENTAR UN INPUT PARA PERSONALIZAR EL ERROR -->

@@ -19,6 +19,7 @@ export class HistorialTableComponent implements OnInit, OnDestroy {
   public dataCitas!: ISoliTable;
   public paciente: Paciente=this.authService.getUser;
   public dataError!: IErrorCont;
+  colorText='binary';
 
   //------ESTRUCTURAR DE MANERA LIMPIA EL AUTHSERVICE-----------------
   constructor(private getSolicitudUseCases: GetSolicitudCaseUses, 
@@ -52,6 +53,8 @@ export class HistorialTableComponent implements OnInit, OnDestroy {
   this.cargarSolicitudes();
 
   }
+
+  
 
 
 
