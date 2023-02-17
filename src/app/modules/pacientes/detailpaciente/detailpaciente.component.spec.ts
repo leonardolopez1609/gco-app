@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { DetailpacienteComponent } from './detailpaciente.component';
+import { SharedModule } from '@shared/shared.module';
+import { PacienteGateway } from '@data/gateways/paciente-gateway';
 
 describe('DetailpacienteComponent', () => {
   let component: DetailpacienteComponent;
@@ -8,7 +10,9 @@ describe('DetailpacienteComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DetailpacienteComponent ]
+      declarations: [ DetailpacienteComponent ],
+      imports: [SharedModule],
+      providers:[PacienteGateway]
     })
     .compileComponents();
 

@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ActivasTableComponent } from './activas-table.component';
+import { SharedModule } from '@shared/shared.module';
 
 describe('ActivasTableComponent', () => {
   let component: ActivasTableComponent;
@@ -8,7 +9,8 @@ describe('ActivasTableComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ActivasTableComponent ]
+      declarations: [ ActivasTableComponent ],
+      imports: [SharedModule]
     })
     .compileComponents();
 
